@@ -1,1 +1,55 @@
+History
+--------
+1995: JavaScript was created by Brendan Eich while working at Netscape Communications Corporation.
+It was initially called "Mocha", then renamed to "LiveScript", and finally to "JavaScript".
+The name was a marketing strategy to leverage the popularity of Java at the time, although JavaScript is not directly related to Java
+
+
+--------------------------------------------------------------------------- Variable and Data types --------------------------------------------------------------------------------------------------
+variable
+---------
+In JavaScript, variables are used to store and manage data.
+You can declare variables using three main keywords: var, let, and const
+var is global scope variable and let and const are block scope variable
+
+1) once you deaclare a var variable and then assign a value to it then you can print it or use it anywhere in the entire program
+2) let varible is block scope variable it means if you declare a let varible and assign a certain value to it in a block the you are not acess it to out side the block
+3) const variable is can't decalare, we have to define it, It means when you create a any const varibale then you have to initialise it with certain value and you can't change the value of const variable
+
+
+Datatypes
+----------
+
+JavaScript has a variety of data types that can be broadly categorized into primitive and object types.
+
+1. Primitive Data Types
+Primitive data types are immutable and represent a single value. JavaScript includes the following primitive types:
+
+1) Number: Represents numeric values, including integers and floating-point numbers.
+Example: 42, 3.14
+
+2) String: Represents a sequence of characters enclosed in single quotes ('), double quotes ("), or backticks (`).
+Example: 'Hello, world!', "JavaScript", `Template literal`
+
+3) Boolean: Represents a logical value, either true or false.
+Example: true, false
+
+4) Undefined: Represents a variable that has been declared but has not been assigned a value. By default, all variables are initialized as undefined.
+Example: let a; // a is undefined
+
+5) Null: Represents the intentional absence of any object value. It is often used to indicate that a variable has no value.
+Example: let b = null;
+
+6) Symbol: Represents a unique and immutable value primarily used as object property keys.
+Example: const sym = Symbol('description');
+
+7) BigInt: Represents whole numbers larger than the Number type can safely handle. It is used for very large integers.
+Example: const bigIntValue = 1234567890123456789012345678901234567890n;
+
+2. Object Data Types
+Objects are more complex data types that allow you to store collections of values and more complex entities. Objects in JavaScript include
+
+1) Object: A collection of key-value pairs where keys are strings (or Symbols) and values can be any data type
+2) Array: A special type of object used for storing ordered collections of values. Arrays can hold elements of any type and are indexed by numbers.
+3) Function: Functions are also objects in JavaScript and can be assigned to variables, passed as arguments, and returned from other functions
 
