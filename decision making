@@ -1,1 +1,104 @@
+In JavaScript, decision-making is typically handled using conditional statements. The primary types of decision-making statements are if, else if, else, switch, and sometimes ternary operators for simpler cases. Here's a brief overview of how to use each
+
+
+if Statement
+-------------
+The if statement evaluates a condition and executes a block of code if the condition is true.
+
+example:
+
+let age = 18;
+
+if (age >= 18) {
+    console.log("You are an adult.");
+}
+
+-------------------------------------------------------------------------------------------------------------------
+if...else Statement
+The if...else statement provides an alternative block of code to execute if the condition is false
+
+let age = 16;
+
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are not an adult.");
+}
+---------------------------------------------------------------------------------------------------------------------------------
+
+if...else if...else Statement
+The if...else if...else statement allows for multiple conditions to be checked
+
+let score = 85;
+
+if (score >= 90) {
+    console.log("Grade: A");
+} else if (score >= 80) {
+    console.log("Grade: B");
+} else if (score >= 70) {
+    console.log("Grade: C");
+} else {
+    console.log("Grade: F");
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+switch Statement
+The switch statement evaluates an expression and executes code blocks based on matching cases. It’s useful for checking a variable against multiple values
+
+let day = 3;
+let dayName;
+
+switch (day) {
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
+        break;
+    case 4:
+        dayName = "Thursday";
+        break;
+    case 5:
+        dayName = "Friday";
+        break;
+    case 6:
+        dayName = "Saturday";
+        break;
+    case 7:
+        dayName = "Sunday";
+        break;
+    default:
+        dayName = "Invalid day";
+}
+
+console.log(dayName);
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Ternary Operator
+The ternary operator is a shorthand for if...else and is useful for simple conditions.
+
+let age = 21;
+let canVote = (age >= 18) ? "Yes" : "No";
+
+console.log(canVote); // Output: "Yes"
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
