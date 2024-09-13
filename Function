@@ -1,1 +1,100 @@
+What is a function?
+A function in JavaScript is a reusable block of code designed to perform a particular task. You define a function once, and then you can call it whenever needed.
+
+Here’s a basic example of a function in JavaScript:
+
+function greet() {
+    console.log("Hello, world!");
+}
+greet();
+
+----------------------------------------------------------------
+Functions with Parameters
+You can make functions more dynamic by passing values (parameters) to them:
+
+function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+greet("Ajay"); 
+greet("Simran");  
+
+--------------------------------------------------------------------------
+Multiple Parameters:
+A function can also accept multiple parameters:
+
+
+function add(a, b) {
+    return a + b;
+}
+
+let sum = add(3, 5); 
+document.write(sum)
+
+----------------------------------------------------------------------------------------------
+Default Parameters
+In JavaScript, you can define default parameters for a function. This means that if no value (or undefined) is passed for that parameter, the function will use the default value you’ve specified.
+
+function greet(name = "Guest") {
+    console.log("Hello, " + name + "!");
+}
+----------------------------------------------------------------------
+Anonymous Functions
+You can also define a function without a name, known as an anonymous function. These are often used when you want to pass a function as an argument to another function:
+
+let greet = function() {
+    console.log("Hello!");
+};
+greet();  // Output: Hello!
+
+
+-------------------------------------------------------------------------------------------
+Arrow Functions (ES6+)
+Arrow functions provide a shorter syntax to write functions:
+
+const add = (a, b) => a + b;
+
+let sum = add(3, 5); 
+document.write(sum);
+
+--------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
