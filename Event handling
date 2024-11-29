@@ -9,12 +9,12 @@ Event handling is the process of writing JavaScript code that listens for events
 Syntax of Event Handling
 javascript
 Copy code
-element.addEventListener(event, function, useCapture);
+element.addEventListener(event, function);
 
 element: The HTML element to attach the event to.
 event: The type of event to listen for (e.g., click, mouseover, keyup).
 function: The callback function to execute when the event occurs.
-useCapture (optional): A boolean that indicates event propagation (default is false).
+
 
 ----------------------------------------------------------------------------------------------------------
 Common Event Types
