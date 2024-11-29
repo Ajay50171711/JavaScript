@@ -1,1 +1,216 @@
+What are Operators in JavaScript?
+Operators are symbols or keywords in JavaScript that tell the program to perform specific actions on data (called operands). For example, you can use operators to perform math, compare values, assign variables, and more.
 
+------------------------------------------------ ARITHMATIC OPERATOR -------------------------------------------------------
+1. Addition (+)
+Used to add two numbers or concatenate strings.
+
+javascript
+Copy code
+let a = 10;
+let b = 5;
+console.log(a + b); // Output: 15
+
+// String concatenation
+let str1 = "Hello";
+let str2 = "World";
+console.log(str1 + " " + str2); // Output: "Hello World"
+
+
+
+2. Subtraction (-)
+Used to subtract one number from another.
+
+javascript
+Copy code
+let a = 10;
+let b = 5;
+console.log(a - b); // Output: 5
+
+
+3. Multiplication (*)
+Used to multiply two numbers.
+
+javascript
+Copy code
+let a = 10;
+let b = 5;
+console.log(a * b); // Output: 50
+
+
+
+4. Division (/)
+Used to divide one number by another.
+
+javascript
+Copy code
+let a = 10;
+let b = 5;
+console.log(a / b); // Output: 2
+
+
+
+5. Modulus (%)
+Returns the remainder of a division.
+
+javascript
+Copy code
+let a = 10;
+let b = 3;
+console.log(a % b); // Output: 1
+
+
+
+6. Exponentiation (**)
+Raises the first operand to the power of the second operand.
+
+javascript
+Copy code
+let a = 2;
+let b = 3;
+console.log(a ** b); // Output: 8 (2 to the power of 3 = 8)
+
+
+7. Unary Plus (+)
+Converts a non-number into a number.
+
+javascript
+Copy code
+let a = "5";
+console.log(+a); // Output: 5 (string converted to number)
+
+let b = true;
+console.log(+b); // Output: 1 (true is converted to 1)
+
+
+
+8. Unary Minus (-)
+Negates a number or converts a non-number into a negative number.
+
+javascript
+Copy code
+let a = "5";
+console.log(-a); // Output: -5 (string converted to number and negated)
+
+let b = false;
+console.log(-b); // Output: 0 (false is converted to 0 and negated)
+
+
+Complete Example:
+javascript
+Copy code
+let x = 10;
+let y = 3;
+
+console.log("Addition: ", x + y);       // Output: 13
+console.log("Subtraction: ", x - y);   // Output: 7
+console.log("Multiplication: ", x * y); // Output: 30
+console.log("Division: ", x / y);      // Output: 3.3333333333333335
+console.log("Modulus: ", x % y);       // Output: 1
+console.log("Exponentiation: ", x ** y); // Output: 1000
+
+// Unary Operators
+let num = "5";
+console.log(+num); // Output: 5
+console.log(-num); // Output: -5
+
+
+----------------------------------------------------ASSIGNMWENT OPERATOR----------------------------------------------------
+
+Examples: Assignment Operators
+
+let x = 10;
+
+// Simple assignment
+x = 20; // x is now 20
+
+// Add and assign
+x += 5; // x = x + 5; now x is 25
+
+// Subtract and assign
+x -= 3; // x = x - 3; now x is 22
+
+// Multiply and assign
+x *= 2; // x = x * 2; now x is 44
+
+// Divide and assign
+x /= 4; // x = x / 4; now x is 11
+
+// Modulus and assign
+x %= 3; // x = x % 3; now x is 2
+
+console.log(x); // Final value of x is 2
+
+
+------------------------------------------------------COMPARISON OPRATOR----------------------------------------------------
+
+Examples: Comparison Operators
+
+let a = 10, b = "10";
+
+// Equal to (loose comparison)
+console.log(a == b); // true (value is compared)
+
+// Strict equal to
+console.log(a === b); // false (type is also compared)
+
+// Not equal to
+console.log(a != b); // false (values are equal)
+
+// Strict not equal to
+console.log(a !== b); // true (types are different)
+
+// Greater than
+console.log(a > 5); // true
+
+// Less than or equal to
+console.log(a <= 10); // true
+
+
+-----------------------------------------------------LOGICAL OPERATOR-------------------------------------------------------
+
+
+Examples: Logical Operators
+
+let a = true, b = false;
+
+// AND
+console.log(a && b); // false (both must be true)
+
+// OR
+console.log(a || b); // true (at least one is true)
+
+// NOT
+console.log(!a); // false (negation of true)
+
+
+-------------------------------------------------------TERNARY OPERATOR-----------------------------------------------------
+
+
+Example: Ternary Operator
+javascript
+Copy code
+let age = 18;
+let isAdult = age >= 18 ? "Yes" : "No";
+console.log(isAdult); // "Yes"
+
+
+--------------------------------------------------------TYPE OPERATOR------------------------------------------------------
+
+Example: Type Operators
+javascript
+Copy code
+let x = 42;
+console.log(typeof x); // "number"
+
+let arr = [];
+console.log(arr instanceof Array); // true
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Class Activity
+Write a program to check if a number is even or odd using the modulus (%) operator.
+Write a program that uses a ternary operator to determine if a person is old enough to drive (age >= 18).
+
+----------------------------------------------------------------------------------------------------------------------------
