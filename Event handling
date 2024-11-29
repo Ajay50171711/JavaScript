@@ -1,1 +1,86 @@
+What is Event ?
+Events are actions or occurrences that happen in the browser, like clicking a button, moving the mouse, typing on the keyboard, or loading a webpage.
 
+
+What is Event Handling?
+Event handling is the process of writing JavaScript code that listens for events and executes a specific function when an event occurs
+
+
+Syntax of Event Handling
+javascript
+Copy code
+element.addEventListener(event, function, useCapture);
+
+element: The HTML element to attach the event to.
+event: The type of event to listen for (e.g., click, mouseover, keyup).
+function: The callback function to execute when the event occurs.
+useCapture (optional): A boolean that indicates event propagation (default is false).
+
+----------------------------------------------------------------------------------------------------------
+Common Event Types
+
+click	                       Triggers when an element is clicked.
+mouseover	                   Triggers when the mouse hovers over an element.
+keydown	                     Triggers when a key is pressed.
+submit	                     Triggers when a form is submitted.
+load	                       Triggers when the page or an image is fully loaded.
+resize	                     Triggers when the browser window is resized.
+
+
+-------------------------------------------Examples of Event Handling--------------------------------------------------------
+1. Handling a Button Click
+
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Handling Example</title>
+</head>
+<body>
+  <button id="myButton">Click Me!</button>
+
+  <script>
+    // Get the button element
+    const button = document.getElementById('myButton');
+
+    // Add an event listener for 'click' event
+    button.addEventListener('click', function () {
+      alert('Button was clicked!');
+    });
+  </script>
+</body>
+</html>
+--------------------------------------------------------------------------------------------------------------------------
+
+2. Handling Mouseover
+
+This example changes the text color when the mouse hovers over it.
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mouseover Event</title>
+</head>
+<body>
+  <p id="hoverText">Hover over me!</p>
+
+  <script>
+    const text = document.getElementById('hoverText');
+
+    text.addEventListener('mouseover', function () {
+      text.style.color = 'blue';
+    });
+
+    text.addEventListener('mouseout', function () {
+      text.style.color = 'black';
+    });
+  </script>
+</body>
+</html>
+-----------------------------------------------------------------------------------------------------------------------------
+
+AND MORE EVENT............
