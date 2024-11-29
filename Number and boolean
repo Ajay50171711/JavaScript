@@ -1,1 +1,72 @@
+What is a Number?
+In JavaScript, all numbers are of the type number, whether they are integers (e.g., 5) or floating-point (e.g., 5.5).
+JavaScript doesn't distinguish between integers and floats.
+
+Number Methods
+JavaScript provides methods to work with numbers.
+
+1. toFixed()
+Formats a number to a specific number of decimal places.
+
+
+Number Methods
+JavaScript provides methods to work with numbers.
+
+1. toFixed()
+Formats a number to a specific number of decimal places.
+let num = 3.14159;
+console.log(num.toFixed(2)); // Output: 3.14
+
+2. toString()
+Converts a number to a string.
+let num = 42;
+console.log(num.toString()); // Output: "42"
+
+3. toExponential()
+Returns a number in exponential notation.
+let num = 123456;
+console.log(num.toExponential(2)); // Output: 1.23e+5
+
+
+Special Numeric Values
+
+Infinity: Result of dividing by zero or very large calculations
+console.log(1 / 0); // Output: Infinity
+
+-Infinity: Negative infinity, e.g., when a negative number is divided by zero
+console.log(-1 / 0); // Output: -Infinity
+
+NaN (Not-a-Number): A result that isn’t a valid number.
+console.log("hello" * 5); // Output: NaN
+
+
+console.log(Math.PI);           // Output: 3.141592653589793
+console.log(Math.sqrt(16));     // Output: 4 (Square root)
+console.log(Math.random());     // Output: Random number between 0 and 1
+console.log(Math.round(3.6));   // Output: 4 (Rounds to nearest integer)
+console.log(Math.floor(3.6));   // Output: 3 (Rounds down)
+console.log(Math.ceil(3.6));    // Output: 4 (Rounds up)
+
+
+
+2. Booleans in JavaScript
+---------------------------
+What is a Boolean?
+A Boolean represents one of two values:
+true
+false
+Booleans are often used in conditional statements to control the flow of code
+
+console.log(5 > 3);    // Output: true
+console.log(2 <= 1);   // Output: false
+console.log("a" === "a"); // Output: true
+console.log(10 !== 10); // Output: false
+
+
+console.log(true && false); // Output: false
+console.log(true || false); // Output: true
+console.log(!true); // Output: false
+
+
+
 
