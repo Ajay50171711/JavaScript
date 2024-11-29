@@ -1,1 +1,41 @@
+What is an Object in JavaScript?
+An object in JavaScript is a collection of properties, where each property has a key (or name) and a value. Think of it as a way to store multiple related pieces of data together.
+
+Keys are also called properties (e.g., name, age).
+Values can be anything: strings, numbers, arrays, other objects, or even functions (methods).
+
+// Step 1: Create an object
+const student = {
+  name: "Alex",        // Property 1
+  age: 20,             // Property 2
+ 
+  
+  // Method: Function inside the object
+  introduce: function() {
+    console.log("Hello, my name is " + this.name + " and I am " + this.age + " years old.");
+  }
+};
+
+// Step 2: Access properties
+console.log(student.name); // Output: Alex
+console.log(student.age);  // Output: 20
+
+// Step 3: Call methods
+student.introduce()
+
+
+
+What is the this keyword?
+The this keyword in JavaScript refers to the object that is currently executing the code. It helps you work with properties and methods inside an object or in a specific context.
+
+
+
+
+
+
+
+
+
+
+
 
