@@ -1,1 +1,87 @@
+What is a String?
+A string is a collection of characters enclosed in:
+Strings in JavaScript are immutable (cannot be changed directly).
+
+Single quotes (')
+Double quotes (")
+Backticks (``) for template literals.
+
+let singleQuote = 'Hello, World!';
+let doubleQuote = "Hello, World!";
+let templateLiteral = `Hello, World!`;
+
+
+String Object
+In JavaScript, strings can be treated as primitive values or objects. The String object allows you to use various properties and methods to manipulate strings.
+
+
+Creating Strings
+--------------------
+1. String as a Primitive
+Most of the time, you’ll work with primitive strings:
+let message = "Hello, JavaScript!";
+console.log(typeof message); // Output: string
+
+
+2. String as an Object
+You can also create a string using the String constructor, though this is rarely needed:
+let message = new String("Hello, JavaScript!");
+console.log(typeof message); // Output: object
+
+Properties of String Object
+--------------------------------------
+let str = "JavaScript";
+console.log(str[0]); // Output: J
+console.log(str[4]); // Output: S
+
+let str = "JavaScript";
+console.log(str.charAt(0)); // Output: J
+
+let str = "hello";
+console.log(str.toUpperCase()); // Output: HELLO
+
+let str = "HELLO";
+console.log(str.toLowerCase()); // Output: hello
+
+let str = "Hello, JavaScript!";
+console.log(str.indexOf("JavaScript")); // Output: 7
+console.log(str.indexOf("Python"));    // Output: -1 (not found)
+
+let str = "Hello, JavaScript, Hello!";
+console.log(str.lastIndexOf("Hello")); // Output: 19
+
+let str = "Hello, JavaScript!";
+console.log(str.includes("JavaScript")); // Output: true
+
+let str = "Hello, JavaScript!";
+console.log(str.startsWith("Hello")); // Output: true
+
+let str = "Hello, JavaScript!";
+console.log(str.endsWith("!")); // Output: true
+
+let str = "JavaScript";
+console.log(str.slice(0, 4)); // Output: Java
+console.log(str.slice(4));    // Output: Script
+
+let str = "JavaScript";
+console.log(str.substring(0, 4)); // Output: Java
+
+let str = "Hello, JavaScript!";
+console.log(str.replace("JavaScript", "World")); // Output: Hello, World!
+
+let str = "Apple, Banana, Cherry";
+console.log(str.split(", ")); // Output: ["Apple", "Banana", "Cherry"]
+
+let str = "   Hello!   ";
+console.log(str.trim()); // Output: "Hello!"
+
+let str = "   Hello!   ";
+console.log(str.trimStart()); // Output: "Hello!   "
+console.log(str.trimEnd());   // Output: "   Hello!"
+
+let str = "Hi! ";
+console.log(str.repeat(3)); // Output: Hi! Hi! Hi! 
+
+let name = "Alice";
+console.log(`Hello, ${name}!`); // Output: Hello, Alice!
 
