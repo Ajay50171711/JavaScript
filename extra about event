@@ -1,0 +1,203 @@
+1. Click Event
+When a button is clicked, something happens (e.g., showing an alert or changing text).
+
+Example:
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Event</title>
+</head>
+<body>
+    <button id="myButton">Click Me!</button>
+    <p id="message"></p>
+    <script>
+        const button = document.getElementById("myButton");
+        const message = document.getElementById("message");
+
+        button.addEventListener("click", function () {
+            message.textContent = "Button was clicked!";
+        });
+    </script>
+</body>
+</html>
+Explanation:
+When you click the button, the click event triggers.
+The paragraph text changes to "Button was clicked!" by modifying textContent.
+2. Keydown Event
+Detect when a key is pressed on the keyboard.
+
+Example:
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keydown Event</title>
+</head>
+<body>
+    <p>Type something in the input box:</p>
+    <input type="text" id="inputBox">
+    <p id="output"></p>
+    <script>
+        const inputBox = document.getElementById("inputBox");
+        const output = document.getElementById("output");
+
+        inputBox.addEventListener("keydown", function (event) {
+            output.textContent = `You pressed: ${event.key}`;
+        });
+    </script>
+</body>
+</html>
+Explanation:
+Each time a key is pressed in the input box, the keydown event fires.
+event.key gets the name of the key pressed and displays it.
+3. Double-Click Event
+Perform an action when an element is double-clicked.
+
+Example:
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double-Click Event</title>
+</head>
+<body>
+    <p id="text">Double-click me to change my color!</p>
+    <script>
+        const text = document.getElementById("text");
+
+        text.addEventListener("dblclick", function () {
+            text.style.color = "blue";
+        });
+    </script>
+</body>
+</html>
+Explanation:
+When you double-click the paragraph, the color changes to blue.
+4. Mouse Out Event
+Change the style when the mouse leaves an element.
+
+Example:
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Out Event</title>
+</head>
+<body>
+    <div id="box" style="width: 100px; height: 100px; background-color: lightgreen;"></div>
+    <script>
+        const box = document.getElementById("box");
+
+        box.addEventListener("mouseout", function () {
+            box.style.backgroundColor = "red";
+        });
+    </script>
+</body>
+</html>
+Explanation:
+When the mouse leaves the green box, its background changes to red.
+5. Form Submit Event
+Capture form submission and prevent default behavior.
+
+Example:
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submit Event</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        const form = document.getElementById("myForm");
+        const result = document.getElementById("result");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form from reloading the page
+            const name = document.getElementById("name").value;
+            result.textContent = `Hello, ${name}!`;
+        });
+    </script>
+</body>
+</html>
+Explanation:
+event.preventDefault() stops the form's default action (submitting and refreshing the page).
+The name entered is displayed as a greeting.
+6. Change Event
+Detect when the value of an input field changes.
+
+Example:
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Event</title>
+</head>
+<body>
+    <label for="dropdown">Choose a color:</label>
+    <select id="dropdown">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+    </select>
+    <p id="selectedColor">Your selected color will appear here.</p>
+    <script>
+        const dropdown = document.getElementById("dropdown");
+        const selectedColor = document.getElementById("selectedColor");
+
+        dropdown.addEventListener("change", function () {
+            selectedColor.textContent = `You selected: ${dropdown.value}`;
+        });
+    </script>
+</body>
+</html>
+Explanation:
+When you select a new value from the dropdown, the change event fires, and the selected value is displayed.
+7. Resize Event
+Detect when the browser window is resized.
+
+Example:
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize Event</title>
+</head>
+<body>
+    <p id="size">Resize the browser window to see the dimensions.</p>
+    <script>
+        const size = document.getElementById("size");
+
+        window.addEventListener("resize", function () {
+            size.textContent = `Width: ${window.innerWidth}, Height: ${window.innerHeight}`;
+        });
+    </script>
+</body>
+</html>
