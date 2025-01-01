@@ -191,3 +191,89 @@ set method
 </body>
 </html>
 ----------------------------------------------------------------------------------------------------------------------
+1)<script>
+    var a = new Date();
+    document.write(a);
+   </script>
+
+2) <script>
+    var a = new Date();
+    document.write(a.getDate());
+   </script> 
+
+3)<script>
+    var a = new Date();
+    document.write(a.getDate());
+   </script> 
+
+4)   <script>
+    var a = new Date();
+    document.write(a.getFullYear());
+   </script> 
+
+5)   <script>
+    var a = new Date();
+    document.write(a.getMonth());
+   </script> 
+
+6) <script>
+    var a = new Date();
+    document.write(a.getHours());
+   </script>
+
+7)   <script>
+    var a = new Date();
+    document.write(a.getMinutes());
+   </script> 
+
+8)  <script>
+    var a = new Date();
+    document.write(a.getSeconds());
+   </script> 
+
+
+9)   <script>
+    var a = new Date();
+    document.write(a.getMilliseconds());
+   </script> 
+
+
+set method
+
+
+ 10)  <script>
+    var a = new Date();
+    a.setDate(33);
+    document.write(a);
+   </script> 
+
+
+ 11)  <script>
+    var a = new Date();
+  
+    document.write(a.getDate()+"/"+(a.getMonth()+1)+"/"+a.getFullYear());
+   </script> 
+
+
+12)   <script>
+    var a = new Date();
+    document.write(a.getTime())
+   </script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
