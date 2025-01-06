@@ -37,6 +37,16 @@ console.log(str[4]); // Output: S
 let str = "JavaScript";
 console.log(str.charAt(0)); // Output: J
 
+let str1 = "Hello";
+let str2 = "World";
+let result = str1 + ", " + str2 + "!";
+console.log(result); // Output: "Hello, World!"
+
+let str1 = "Hello";
+let str2 = "World";
+let result = str1.concat(", ", str2, "!");
+console.log(result); // Output: "Hello, World!"
+
 let str = "hello";
 console.log(str.toUpperCase()); // Output: HELLO
 
@@ -63,14 +73,8 @@ let str = "JavaScript";
 console.log(str.slice(0, 4)); // Output: Java
 console.log(str.slice(4));    // Output: Script
 
-let str = "JavaScript";
-console.log(str.substring(0, 4)); // Output: Java
-
 let str = "Hello, JavaScript!";
 console.log(str.replace("JavaScript", "World")); // Output: Hello, World!
-
-let str = "Apple, Banana, Cherry";
-console.log(str.split(", ")); // Output: ["Apple", "Banana", "Cherry"]
 
 let str = "   Hello!   ";
 console.log(str.trim()); // Output: "Hello!"
