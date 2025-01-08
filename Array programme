@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        const fruits = ["apple", "banana", "cherry"];
+        document.write(fruits[0])
+        document.write(fruits[1])
+    </script> -->
+
+    <!-- <script>
+        const numbers = []
+        numbers.push(10);
+        numbers.push(20);
+        numbers.push(30);
+        document.write(numbers)
+    </script> -->
+
+    <!-- <script>
+        const mixedArray = [42, "hello", true,  [1, 2, 3]];
+        document.write(mixedArray)
+    </script> -->
+
+    <!-- <script>
+        const fruits = ["apple", "banana", "cherry"];
+        fruits.push("orange")
+        document.write(fruits)
+    </script> -->
+
+    <!-- <script>
+        const fruits = ["apple", "banana", "cherry"];
+        fruits.pop()
+        document.write(fruits)
+    </script> -->
+
+    <!-- <script>
+        const fruits = ["apple", "banana", "cherry"];
+        fruits.unshift("orange")
+        document.write(fruits)
+    </script> -->
+<!-- 
+    <script>
+        const fruits = ["apple", "banana", "cherry"];
+        fruits.shift()
+        document.write(fruits)
+    </script> -->
+
+    <!-- <script>
+        const fruits = ["apple", "banana", "cherry"];
+        document.write(fruits.length)
+    </script> -->
+
+    <!-- <script>
+        const fruits = ["apple", "banana", "cherry"];
+      for(i=0;i<fruits.length;i++){
+        document.write(fruits[i],"<br>")
+      }
+    </script> -->
+
+    <!-- <script>
+        const fruits = ["apple", "banana", "cherry"];
+        for(item of fruits){
+            document.write(item,"<br>")
+        }
+    </script> -->
+<!-- 
+    <script>
+        const fruits = ["apple", "banana", "cherry"];
+     fruits.forEach((value)=>document.write(value))
+    </script> -->
+
+<!-- 
+    <script>
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, 6];
+        const combined = arr1.concat(arr2);
+        document.write(combined); 
+    </script> -->
+
+<!--     
+    <script>
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, 6];
+        const combined = arr1+arr2;
+        document.write(combined); 
+    </script> -->
+<!--     
+    <script>    
+    const fruits = ["apple", "banana", "cherry"];
+    document.write(fruits.includes("banana"));
+    document.write(fruits.includes("grape")); 
+    </script> -->
+<!-- 
+<script>
+    const fruits = ["apple", "banana", "cherry"];
+    document.write(fruits.indexOf("banana")); 
+    document.write(fruits.indexOf("grape")); 
+</script> -->
+
+<!-- <script>
+    const fruits = ["apple", "banana", "cherry","banana"];
+    document.write(fruits.lastIndexOf("banana"));  
+</script> -->
+
+<!-- <script>
+    let number = [1,2,3,4,5,6,7,8]
+    document.write(number.slice(1,4)) 
+</script> -->
+
+<!-- <script>
+    let numbers = [12,34,56,67,89,9,12,67]
+    numbers.splice(2,0,6,7,8)
+    document.write(numbers)
+</script> -->
+
+<!-- <script>
+    let numbers = [12,34,56,67,89,9,12,67]
+    numbers.splice(2,2)
+    document.write(numbers)
+</script> -->
+
+<!-- <script>
+    let numbers = [12,34,99,56,67,89,67]
+    numbers.sort()
+    document.write(numbers)
+</script> -->
+
+<!-- <script>
+    let numbers = [12,56,90]
+    numbers.reverse()
+    document.write(numbers)
+</script> -->
+
+</body>
+</html>
