@@ -1,1 +1,191 @@
+// 1. Selecting Elements
+// querySelector - returns first matching element
+const element = document.querySelector('.class-name');
+const elementById = document.querySelector('#id-name');
+const elementByTag = document.querySelector('div');
 
+// querySelectorAll - returns all matching elements
+const elements = document.querySelectorAll('.class-name');
+const allParagraphs = document.querySelectorAll('p');
+
+// Traditional methods
+const byId = document.getElementById('id-name');
+const byClass = document.getElementsByClassName('class-name');
+const byTag = document.getElementsByTagName('div');
+
+// 2. Creating Elements
+// Create new element
+const newDiv = document.createElement('div');
+const newParagraph = document.createElement('p');
+
+// Add content
+newDiv.textContent = 'Hello World';
+newDiv.innerHTML = '<span>Hello World</span>';
+
+// 3. Modifying Elements
+// Add/remove classes
+element.classList.add('new-class');
+element.classList.remove('old-class');
+element.classList.toggle('toggle-class');
+element.classList.replace('old-class', 'new-class');
+
+// Check if class exists
+const hasClass = element.classList.contains('class-name');
+
+// Modify attributes
+element.setAttribute('id', 'new-id');
+element.getAttribute('id');
+element.removeAttribute('id');
+element.hasAttribute('id');
+
+// Data attributes
+element.dataset.customAttribute = 'value';
+const value = element.dataset.customAttribute;
+
+// 4. DOM Tree Manipulation
+// Append elements
+parent.appendChild(newElement);
+parent.append(element1, element2, 'text node');
+parent.prepend(newElement);
+
+// Insert elements at specific positions
+parent.insertBefore(newElement, referenceElement);
+referenceElement.insertAdjacentElement('beforebegin', newElement);
+referenceElement.insertAdjacentElement('afterend', newElement);
+
+// Remove elements
+element.remove();
+parent.removeChild(element);
+
+// Replace elements
+parent.replaceChild(newElement, oldElement);
+
+// Clone elements
+const clone = element.cloneNode(true); // true for deep clone
+
+// 5. Style Manipulation
+// Direct style modification
+element.style.backgroundColor = 'red';
+element.style.fontSize = '16px';
+element.style.marginTop = '20px';
+
+// Get computed styles
+const computedStyle = window.getComputedStyle(element);
+const fontSize = computedStyle.fontSize;
+
+// 6. CSS Custom Properties (Variables)
+// Set CSS variable
+document.documentElement.style.setProperty('--main-color', '#ff0000');
+
+// Get CSS variable
+const mainColor = getComputedStyle(document.documentElement)
+    .getPropertyValue('--main-color');
+
+// 7. Event Handling
+// Add event listeners
+element.addEventListener('click', function(event) {
+    console.log('Clicked!');
+});
+
+// Remove event listeners
+const handler = function(event) {
+    console.log('Handled!');
+};
+element.addEventListener('click', handler);
+element.removeEventListener('click', handler);
+
+// 8. Practical Examples
+
+// Example 1: Toggle mobile menu
+const menuButton = document.querySelector('.menu-button');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    menuButton.setAttribute('aria-expanded', 
+        mobileMenu.classList.contains('active'));
+});
+
+// Example 2: Form validation
+const form = document.querySelector('form');
+const emailInput = form.querySelector('input[type="email"]');
+
+form.addEventListener('submit', (event) => {
+    if (!emailInput.value.includes('@')) {
+        event.preventDefault();
+        emailInput.classList.add('error');
+        const errorMessage = document.createElement('p');
+        errorMessage.textContent = 'Please enter a valid email';
+        errorMessage.classList.add('error-message');
+        emailInput.parentNode.appendChild(errorMessage);
+    }
+});
+
+// Example 3: Image gallery
+const gallery = document.querySelector('.gallery');
+const images = gallery.querySelectorAll('img');
+const modal = document.querySelector('.modal');
+const modalImage = modal.querySelector('img');
+
+images.forEach(image => {
+    image.addEventListener('click', () => {
+        modalImage.src = image.src;
+        modal.classList.add('active');
+    });
+});
+
+modal.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
+
+// Example 4: Dynamic theme switching
+const themeToggle = document.querySelector('.theme-toggle');
+
+themeToggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark-theme');
+    const isDark = document.documentElement.classList.contains('dark-theme');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+// Example 5: Infinite scroll
+window.addEventListener('scroll', () => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    
+    if (scrollTop + clientHeight >= scrollHeight - 5) {
+        // Load more content
+        loadMoreContent();
+    }
+});
+
+function loadMoreContent() {
+    const content = document.createElement('div');
+    content.classList.add('content-item');
+    content.textContent = 'New Content';
+    document.querySelector('.content-container').appendChild(content);
+}
+
+// Example 6: Drag and drop
+const draggable = document.querySelector('.draggable');
+const dropZone = document.querySelector('.drop-zone');
+
+draggable.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', e.target.id);
+    e.target.classList.add('dragging');
+});
+
+draggable.addEventListener('dragend', (e) => {
+    e.target.classList.remove('dragging');
+});
+
+dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    e.target.classList.add('drag-over');
+});
+
+dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    const id = e.dataTransfer.getData('text/plain');
+    const draggableElement = document.getElementById(id);
+    dropZone.appendChild(draggableElement);
+    e.target.classList.remove('drag-over');
+});
