@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        #counter { font-size: 3rem; margin: 20px; }
+        button { font-size: 1.2rem; margin: 5px; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1> Simple Counter</h1>
+    <p id="counter">0</p>
+    <button id="increase">Increase</button>
+    <button id="decrease">Decrease</button>
+    <button id="reset">Reset</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+--------------------------------------------------------------------------------------------------------------------------------
+class Counter {
+    constructor() {
+        this.count = 0;  // Number
+        this.isActive = true; // Boolean
+
+        // Selecting DOM elements
+        this.counterDisplay = document.getElementById("counter");
+        this.increaseBtn = document.getElementById("increase");
+        this.decreaseBtn = document.getElementById("decrease");
+        this.resetBtn = document.getElementById("reset");
+
+        // Adding event listeners with "this" binding
+        this.increaseBtn.addEventListener("click", () => this.increase());
+        this.decreaseBtn.addEventListener("click", () => this.decrease());
+        this.resetBtn.addEventListener("click", () => this.reset());
+
+        this.updateDisplay();
+    }
+
+    updateDisplay() {
+        this.counterDisplay.textContent = this.count;
+    }
+
+    increase() {
+        if (this.isActive) {
+            this.count++;
+            this.updateDisplay();
+        }
+    }
+
+    decrease() {
+        if (this.isActive && this.count > 0) {
+            this.count--;
+            this.updateDisplay();
+        }
+    }
+
+    reset() {
+        this.count = 0;
+        this.updateDisplay();
+    }
+}
+
+// Create a Counter object
+const myCounter = new Counter();
