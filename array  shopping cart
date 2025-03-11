@@ -1,0 +1,56 @@
+// Initialize the cart as an empty array
+let cart = [];
+
+// Function to add an item to the cart
+function addToCart(productId, productName, price) {
+  // Push the new product to the cart array
+  cart.push({ productId, productName, price });
+  console.log(`${productName} has been added to your cart.`);
+  displayCart();
+}
+
+// Function to remove an item from the cart
+function removeFromCart(productId) {
+  // Filter out the product with the given productId
+  const removedItem = cart.filter(item => item.productId === productId);
+  
+  // If the product was found and removed
+  if (removedItem.length > 0) {
+    cart = cart.filter(item => item.productId !== productId);
+    console.log(`${removedItem[0].productName} has been removed from your cart.`);
+  } else {
+    console.log("Product not found in your cart.");
+  }
+  displayCart();
+}
+
+// Function to view the current cart
+function displayCart() {
+  if (cart.length === 0) {
+    console.log("Your cart is empty.");
+  } else {
+    console.log("Your Cart: ");
+    cart.forEach(item => {
+      console.log(`Product ID: ${item.productId}, Name: ${item.productName}, Price: $${item.price}`);
+    });
+    calculateTotal();
+  }
+}
+
+// Function to calculate the total price of the cart
+function calculateTotal() {
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  console.log(`Total Price: $${total.toFixed(2)}`);
+}
+
+// Example usage of the functions
+addToCart(1, "Laptop", 899.99);
+addToCart(2, "Smartphone", 499.99);
+addToCart(3, "Headphones", 129.99);
+
+removeFromCart(2); // Remove the smartphone
+
+addToCart(4, "Smart Watch", 199.99);
+
+// Final Cart Display
+displayCart();
