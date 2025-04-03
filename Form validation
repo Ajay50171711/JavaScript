@@ -77,3 +77,48 @@
     </script>
 </body>
 </html>
+=================================================================for you=================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" id="myform">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+    
+    <label for="email">E-mail:</label>
+    <input type="text" id="email" name="email"><br><br>
+    
+    <button type="submit">submit</button>
+  </form>
+  <script>
+    const form = document.querySelector("#myform");
+    
+    form.addEventListener("submit", function(event){
+      let name = document.querySelector("#name").value;
+      let email = document.querySelector("#email").value;
+      
+      if(!name){
+        event.preventDefault();
+        alert("Please enter your name");
+      }
+      else if(!/^[A-Za-z\s]+$/.test(name)){
+        event.preventDefault();
+        alert("please enter a valid name");
+      }
+      else if(!email){
+        event.preventDefault();
+        alert("Please enter your email");
+      }
+      else if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)){
+        event.preventDefault();
+        alert("please enter valid email");
+      }
+    });
+  </script>
+</body>
+</html>
