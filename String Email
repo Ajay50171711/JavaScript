@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+<body>
+    <h2>Email Validation</h2>
+    <input type="text" id="emailInput" placeholder="Enter your email">
+    <button onclick="validateEmail()">Validate Email</button>
+    <p id="result"></p>
+
+    <script>
+        function validateEmail() {
+            // Get the value entered in the input field
+            let email = document.getElementById('emailInput').value;
+
+            // Check if the email contains the '@' symbol
+            if (email.includes('@')) {
+                document.getElementById('result').textContent = "Valid email format (contains @ symbol).";
+                document.getElementById('result').style.color = 'green';
+            } else {
+                document.getElementById('result').textContent = "Invalid email! The '@' symbol is missing.";
+                document.getElementById('result').style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
