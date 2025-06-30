@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <style>
+    .task {
+      margin: 5px 0;
+    }
+    .delete-btn {
+      margin-left: 10px;
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 id="header">My To-Do List</h2>
+
+  <input type="text" id="task-input" placeholder="Enter a task">
+  <button id="add-task-btn">Add Task</button>
+
+  <ul id="task-list"></ul>
+
+  <script>
+    // Get the elements
+    const input = document.getElementById('task-input');
+    const addBtn = document.getElementById('add-task-btn');
+    const taskList = document.getElementById('task-list');
+    const header = document.getElementById('header');
+
+    // Change header style
+    header.style.color = 'blue';
+
+    // When Add Task button is clicked
+    addBtn.addEventListener('click', () => {
+      const taskText = input.value.trim();
+
+      if (taskText !== '') {
+        // Create list item
+        const li = document.createElement('li');
+        li.classList.add('task');
+        li.textContent = taskText;
+
+        // Create delete button
+        const deleteBtn = document.createElement('span');
+        deleteBtn.textContent = '❌';
+        deleteBtn.classList.add('delete-btn');
+
+        // Add delete function
+        deleteBtn.addEventListener('click', () => {
+          li.remove();
+        });
+
+        // Add everything to the list
+        li.appendChild(deleteBtn);
+        taskList.appendChild(li);
+
+        // Clear input
+        input.value = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
