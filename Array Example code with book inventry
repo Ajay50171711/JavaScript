@@ -1,0 +1,70 @@
+// Array of book titles
+let books = ["The Alchemist", "Zero to One", "Atomic Habits", "Deep Work", "The Alchemist", "Grit"];
+
+// 1️⃣ indexOf & lastIndexOf
+console.log("First index of 'The Alchemist':", books.indexOf("The Alchemist"));
+console.log("Last index of 'The Alchemist':", books.lastIndexOf("The Alchemist"));
+
+// 2️⃣ toUpperCase, toLowerCase
+let upperTitles = books.map(title => title.toUpperCase());
+let lowerTitles = books.map(title => title.toLowerCase());
+console.log("UPPER CASE:", upperTitles);
+console.log("lower case:", lowerTitles);
+
+// 3️⃣ length
+console.log("Total books:", books.length);
+
+// 4️⃣ fill - fill last 2 elements with "Coming Soon"
+let filledBooks = [...books].fill("Coming Soon", books.length - 2);
+console.log("Filled array:", filledBooks);
+
+// 5️⃣ splice - remove 1 book from index 2 and add another
+let splicedBooks = [...books]; // copy
+splicedBooks.splice(2, 1, "Start With Why");
+console.log("Spliced array:", splicedBooks);
+
+// 6️⃣ slice - get first 3 books
+let topBooks = books.slice(0, 3);
+console.log("Top 3 books:", topBooks);
+
+// 7️⃣ sort - sort alphabetically
+let sortedBooks = [...books].sort();
+console.log("Sorted Books:", sortedBooks);
+
+// 8️⃣ reverse
+let reversedBooks = [...books].reverse();
+console.log("Reversed Books:", reversedBooks);
+
+// 9️⃣ map - add '📘' emoji to each title
+let decorated = books.map(title => "📘 " + title);
+console.log("Decorated Titles:", decorated);
+
+// 🔟 includes - check if a book exists
+console.log("Has 'Grit'?", books.includes("Grit"));
+
+// 1️⃣1️⃣ every - check if all are strings
+console.log("All are strings?", books.every(title => typeof title === "string"));
+
+// 1️⃣2️⃣ some - check if any title contains the word "Work"
+console.log("Any title contains 'Work'?", books.some(title => title.includes("Work")));
+
+// 1️⃣3️⃣ find - find first book that starts with 'A'
+let bookWithA = books.find(title => title.startsWith("A"));
+console.log("First book starting with 'A':", bookWithA);
+
+// 🧾 Object representing book details
+const bookDetails = {
+  title: "Atomic Habits",
+  author: "James Clear",
+  year: 2018,
+  genre: "Self-help"
+};
+
+// 1️⃣4️⃣ Object.keys
+console.log("Book Keys:", Object.keys(bookDetails));
+
+// 1️⃣5️⃣ Object.values
+console.log("Book Values:", Object.values(bookDetails));
+
+// 1️⃣6️⃣ Object.entries
+console.log("Book Entries:", Object.entries(bookDetails));
