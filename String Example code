@@ -1,0 +1,181 @@
+Email Management System
+================================
+You’re building a system that processes user-submitted email messages. You need to:
+
+Validate and format names
+
+Clean up extra spaces
+
+Censor bad words
+
+Extract domain names from emails
+
+Count message length
+
+Analyze subject lines
+
+====================
+
+
+const user = {
+  name: "  john doe  ",
+  email: "john.doe@example.com",
+  message: "Hey there!   This is a test message with some badword in it...",
+  subject: "urgent: password Reset"
+};
+
+// 1️⃣ trim() - Clean up name
+const cleanName = user.name.trim();
+console.log("🧼 Trimmed Name:", cleanName);
+
+// 2️⃣ toUpperCase(), toLowerCase()
+console.log("🧾 Name in UPPERCASE:", cleanName.toUpperCase());
+console.log("🔡 Name in lowercase:", cleanName.toLowerCase());
+
+// 3️⃣ length - character count in message
+console.log("✉️ Message Length:", user.message.length);
+
+// 4️⃣ slice(), substring()
+console.log("📍 First 10 chars:", user.message.slice(0, 10));
+console.log("📍 Middle part (substring):", user.message.substring(5, 15));
+
+// 5️⃣ includes() - bad word check
+console.log("🚫 Contains bad word?", user.message.toLowerCase().includes("badword"));
+
+// 6️⃣ replace() - censor the bad word
+const cleanMessage = user.message.replace("badword", "***");
+console.log("🧽 Censored Message:", cleanMessage);
+
+// 7️⃣ split(), join() - split words and rejoin with dashes
+const words = cleanMessage.trim().split(" ");
+console.log("🪓 Split Words:", words);
+console.log("🔗 Joined with '-':", words.join("-"));
+
+// 8️⃣ startsWith(), endsWith()
+console.log("🎯 Subject starts with 'urgent'?", user.subject.toLowerCase().startsWith("urgent"));
+console.log("✅ Subject ends with 'Reset'?", user.subject.endsWith("Reset"));
+
+// 9️⃣ indexOf(), lastIndexOf()
+console.log("🔍 First space in name:", cleanName.indexOf(" "));
+console.log("🔍 Last space in message:", user.message.lastIndexOf(" "));
+
+// 🔟 repeat() - formatting a divider
+console.log("📎 Divider:", "-".repeat(20));
+
+// 1️⃣1️⃣ charAt(), charCodeAt()
+console.log("🎯 First letter of name:", cleanName.charAt(0));
+console.log("🔢 ASCII of first letter:", cleanName.charCodeAt(0));
+
+// 1️⃣2️⃣ padStart(), padEnd() - format ID field
+const userID = "42";
+console.log("🪪 User ID (padStart):", userID.padStart(5, "0")); // 00042
+console.log("🪪 User ID (padEnd):", userID.padEnd(5, "#"));     // 42###
+
+SAMPLE OUTPUT:
+------------------------------------------------
+🧼 Trimmed Name: john doe
+🧾 Name in UPPERCASE: JOHN DOE
+🔡 Name in lowercase: john doe
+✉️ Message Length: 66
+📍 First 10 chars: Hey there!
+📍 Middle part (substring): here!   Th
+🚫 Contains bad word? true
+🧽 Censored Message: Hey there!   This is a test message with some *** in it...
+🪓 Split Words: [ 'Hey', 'there!', 'This', 'is', 'a', 'test', 'message', 'with', 'some', '***', 'in', 'it...' ]
+🔗 Joined with '-': Hey-there!-This-is-a-test-message-with-some-***-in-it...
+🎯 Subject starts with 'urgent'? true
+✅ Subject ends with 'Reset'? true
+🔍 First space in name: 4
+🔍 Last space in message: 57
+📎 Divider: --------------------
+🎯 First letter of name: j
+🔢 ASCII of first letter: 106
+🪪 User ID (padStart): 00042
+🪪 User ID (padEnd): 42###
+
+==================================================================================
+
+Resume Analyzer System
+==========================
+You run a platform that receives user resumes in plain text format. You want to:
+
+Check if skills are listed
+
+Extract and format their experience summary
+
+Validate if they mentioned keywords like “JavaScript” or “Python”
+
+Detect email & domain
+
+Format output for recruiters
+
+==============================================
+const resume = `
+Name: Priya Sharma
+Email: priya.sharma99@gmail.com
+Skills: JavaScript, Python, HTML, CSS
+Experience: 3 years in frontend development.
+Hobbies: Painting, Blogging
+`;
+
+// 1️⃣ Extract email using match + regex
+const email = resume.match(/[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/)[0];
+console.log("📧 Email Found:", email);
+
+// 2️⃣ Extract domain from email
+const domain = email.split("@")[1];
+console.log("🌐 Email Domain:", domain);
+
+// 3️⃣ Check if resume mentions JavaScript (case-insensitive)
+console.log("🧠 Has JavaScript?", resume.toLowerCase().includes("javascript"));
+
+// 4️⃣ Use search() to find where "Experience" section starts
+const experienceIndex = resume.search(/Experience/i);
+console.log("🔍 'Experience' section starts at index:", experienceIndex);
+
+// 5️⃣ Extract experience line using slice()
+const lines = resume.trim().split("\n");
+const experienceLine = lines.find(line => line.toLowerCase().startsWith("experience"));
+console.log("👔 Experience Summary:", experienceLine);
+
+// 6️⃣ replaceAll - remove commas
+const cleanSkills = resume.match(/Skills: (.+)/i)[1].replaceAll(",", "");
+console.log("📚 Clean Skills:", cleanSkills);
+
+// 7️⃣ concat - combine info for a recruiter summary
+const recruiterNote = "Candidate: ".concat(lines[0].split(":")[1].trim(), " | Email: ", email);
+console.log("📄 Recruiter Note:", recruiterNote);
+
+// 8️⃣ normalize and localeCompare (useful for multilingual input)
+const name1 = "Søren";
+const name2 = "Soren";
+console.log("🔤 Names equal after normalization?", name1.normalize() === name2.normalize());
+console.log("🔠 Compare result:", name1.localeCompare(name2));
+
+// 9️⃣ codePointAt - get code point of first char of name
+console.log("🔢 Unicode of first letter:", lines[0].trim().codePointAt(0));
+
+// 🔟 Format report with padStart/padEnd
+const label = "Skills".padEnd(10, " ");
+const value = cleanSkills.padStart(20, " ");
+console.log("📝 Formatted Report Line:", label + ": " + value);
+
+// 1️⃣1️⃣ repeat - separator line
+console.log("-".repeat(40));
+-----------------------------------------------------
+SAMPLE OUTPUT
+=================
+📧 Email Found: priya.sharma99@gmail.com
+🌐 Email Domain: gmail.com
+🧠 Has JavaScript? true
+🔍 'Experience' section starts at index: 102
+👔 Experience Summary: Experience: 3 years in frontend development.
+📚 Clean Skills: JavaScript Python HTML CSS
+📄 Recruiter Note: Candidate: Priya Sharma | Email: priya.sharma99@gmail.com
+🔤 Names equal after normalization? true
+🔠 Compare result: -1
+🔢 Unicode of first letter: 78
+📝 Formatted Report Line: Skills     :     JavaScript Python HTML CSS
+----------------------------------------
+
+
