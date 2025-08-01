@@ -68,3 +68,52 @@ console.log("Book Values:", Object.values(bookDetails));
 
 // 1️⃣6️⃣ Object.entries
 console.log("Book Entries:", Object.entries(bookDetails));
+
+=========================================================================
+
+A company wants to:
+
+💰 Calculate total payroll (sum of all salaries)
+
+🏆 Identify the highest paid employee
+
+📉 List employees earning below average
+
+
+============================================
+
+const employees = [
+  { name: "Amit", salary: 55000 },
+  { name: "Sonal", salary: 72000 },
+  { name: "Ravi", salary: 48000 },
+  { name: "Megha", salary: 82000 },
+  { name: "Tarun", salary: 51000 }
+];
+
+// 1️⃣ Total payroll
+function getTotalPayroll(employeeList) {
+  return employeeList.reduce((total, emp) => total + emp.salary, 0);
+}
+
+// 2️⃣ Highest paid employee
+function getHighestPaid(employeeList) {
+  return employeeList.sort((a, b) => b.salary - a.salary)[0];
+}
+
+// 3️⃣ Average salary
+function getAverageSalary(employeeList) {
+  const total = getTotalPayroll(employeeList);
+  return total / employeeList.length;
+}
+
+// 4️⃣ Employees earning below average
+function getBelowAverageEmployees(employeeList) {
+  const average = getAverageSalary(employeeList);
+  return employeeList.filter(emp => emp.salary < average);
+}
+
+// 🔽 Output
+console.log("💰 Total Payroll: ₹" + getTotalPayroll(employees));
+console.log("🏆 Highest Paid: " + getHighestPaid(employees).name + " (₹" + getHighestPaid(employees).salary + ")");
+console.log("📉 Employees earning below average:", getBelowAverageEmployees(employees));
+
