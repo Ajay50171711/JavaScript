@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Event Countdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 8px;
+            margin: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Event Countdown</h1>
+    <p>Select an event date:</p>
+    <input type="date" id="eventDate" onchange="startCountdown()">
+
+    <div class="result" id="output"></div>
+
+    <script>
+        let timer; // Store the countdown timer
+
+        function startCountdown() {
+            clearInterval(timer); // Clear any existing countdown
+            let eventDate = document.getElementById("eventDate").value;
+
+            if (!eventDate) {
+                document.getElementById("output").innerHTML = "Please select a date.";
+                return;
+            }
+
+            let future = new Date(eventDate);
+            timer = setInterval(function () {
+                let today = new Date();
+                let diffMs = future.getTime() - today.getTime();
+
+                if (diffMs < 0) {
+                    document.getElementById("output").innerHTML = "🎉 The event date has passed!";
+                    clearInterval(timer);
+                    return;
+                }
+
+                let diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                let diffHours = Math.floor((diffMs / (1000 * 60 * 60)) % 24);
+                let diffMinutes = Math.floor((diffMs / (1000 * 60)) % 60);
+                let diffSeconds = Math.floor((diffMs / 1000) % 60);
+
+                document.getElementById("output").innerHTML = `
+                    <b>Time until event:</b><br>
+                    ${diffDays} days, ${diffHours} hours, ${diffMinutes} minutes, ${diffSeconds} seconds
+                `;
+            }, 1000); // Update every second
+        }
+    </script>
+</body>
+</html>
