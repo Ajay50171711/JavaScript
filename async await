@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function process(){
+            return new Promise((resolve)=>{
+
+
+                setTimeout(() => {
+                     console.log("p[rocess datarete]")
+                resolve()
+                }, 2000);
+               
+
+            })
+        }
+
+        function fetchda6a(){
+            return new Promise((resolve)=>{
+
+                setTimeout(()=>{
+                    console.log("fetching saterte...")
+                    resolve()
+                },2000)
+
+            })
+        
+        
+        
+        }
+
+
+
+        function showdata(){
+            return new Promise((resolve)=>{
+                setTimeout(() => {
+                console.log("lo dekh lo.... ")
+                resolve()
+
+                }, 2000);
+
+            })
+                }
+
+
+
+
+          async function excute() {
+            await process()
+            await fetchda6a();
+            await showdata()
+            console.log("process completed")
+            
+          }
+          excute()
+    </script>
+</body>
+</html>
