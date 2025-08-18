@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .option { padding: 10px; margin: 5px; border: 1px solid #ccc; cursor: pointer; border-radius: 5px; }
+    .option.correct { background: lightgreen; }
+    .option.wrong { background: lightcoral; }
+  </style>
+</head>
+<body>
+  <h1>Quiz App</h1>
+  <div id="quizContainer"></div>
+  <p id="scoreBoard">Score: 0/0</p>
+  <p id="highScore">High Score: 0</p>
+  <button id="restartBtn" style="display:none;">Restart Quiz</button>
+
+  <script>
+    let quizData = [
+      { q: "What does DOM stand for?", options: ["Document Object Model", "Data Object Management", "Desktop Oriented Module"], answer: 0 },
+      { q: "Which method selects by ID?", options: ["querySelector()", "getElementById()", "getElementsByClassName()"], answer: 1 },
+      { q: "Which storage is permanent?", options: ["sessionStorage", "localStorage", "cookies"], answer: 1 }
+    ];
+
+    const quizContainer = document.getElementById("quizContainer");
+    const scoreBoard = document.getElementById("scoreBoard");
+    const highScoreBoard = document.getElementById("highScore");
+    const restartBtn = document.getElementById("restartBtn");
+
+    let currentQ = 0;
+    let score = 0;
+    let highScore = localStorage.getItem("highScore") || 0;
+
+    highScoreBoard.textContent = `High Score: ${highScore}`;
+    scoreBoard.textContent = `Score: 0/${quizData.length}`;
+
+    // Fisher-Yates shuffle function
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    // Shuffle questions at the start
+    quizData = shuffleArray(quizData);
+
+    function loadQuestion() {
+      quizContainer.innerHTML = ""; // clear old content
+
+      if (currentQ >= quizData.length) {
+        quizContainer.innerHTML = `<h2>Quiz Finished! Your Score: ${score}/${quizData.length}</h2>`;
+        restartBtn.style.display = "block";
+
+        if (score > highScore) {
+          localStorage.setItem("highScore", score);
+          highScoreBoard.textContent = `High Score: ${score}`;
+        }
+        return;
+      }
+
+      const question = document.createElement("h2");
+      question.textContent = quizData[currentQ].q;
+      quizContainer.appendChild(question);
+
+      // Shuffle options
+      let options = quizData[currentQ].options.map((opt, idx) => ({ text: opt, index: idx }));
+      options = shuffleArray(options);
+
+      options.forEach((optObj) => {
+        const btn = document.createElement("div");
+        btn.textContent = optObj.text;
+        btn.classList.add("option");
+
+        btn.addEventListener("click", () => {
+          if (optObj.index === quizData[currentQ].answer) {
+            btn.classList.add("correct");
+            score++;
+            scoreBoard.textContent = `Score: ${score}/${quizData.length}`;
+          } else {
+            btn.classList.add("wrong");
+          }
+
+          setTimeout(() => {
+            currentQ++;
+            loadQuestion();
+          }, 1000);
+        });
+
+        quizContainer.appendChild(btn);
+      });
+    }
+
+    restartBtn.addEventListener("click", () => {
+      score = 0;
+      currentQ = 0;
+      scoreBoard.textContent = `Score: 0/${quizData.length}`;
+      restartBtn.style.display = "none";
+      quizData = shuffleArray(quizData); // reshuffle questions on restart
+      loadQuestion();
+    });
+
+    loadQuestion();
+  </script>
+</body>
+</html>
