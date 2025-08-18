@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function processdata(){
+            return new Promise((resolve)=>{
+
+                setTimeout(()=>{
+                    console.log("data is processing")
+                    resolve()
+                },2000)
+
+            })
+        }
+
+        function fetchadata(){
+            return new Promise((resolve)=>{
+                setTimeout(() => {
+                    console.log("data fetching")
+                    resolve()
+                }, 1000);
+            })
+        }
+
+
+        function showdata(){
+            return new Promise((resolve)=>{
+                setTimeout(()=>{
+                    console.log("data is showing")
+                    resolve()
+                },2000)
+            })
+        }
+
+
+
+        processdata()
+        .then(()=>fetchadata())
+        .then(()=>showdata())
+        .then(()=>{console.log("process completed")})
+    </script>
+</body>
+</html>
